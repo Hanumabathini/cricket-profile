@@ -5390,16 +5390,16 @@ function cheer(p,i,t){p.position.y=0.06+Math.abs(Math.sin(t*9+i))*0.5;p.userData
 var bowler=mk(Wc,Rc,'7','BOWLER'),keeper=mk(Wc,Rc,'1','KEEPER',2);
 var um1=mk(0x141a24,0xffffff,'',''),um2=mk(0x141a24,0xffffff,'','');
 put(um1,2.4,-12.4,0);put(um2,-13,9.4,Math.PI/2);
-var batters=[mk(Wc,Bc,'111','CHOWDARY',1),mk(Wc,Bc,'18','PARTNER',1)];
+var batters=[mk(Wc,Bc,'111','CHOWDARY',1),mk(Wc,Bc,'18','SAI SHARAT',1)];
 var FH=[[-3.4,15],[-9,13],[-20,6],[-26,-8],[-18,-30],[18,-30],[28,-4],[45,8],[20,36]];
 var fld=FH.map(function(h,i){var f=mk(Wc,Rc,''+((i+2)*3),'FIELD');f.userData.home=h;return f;});
 var Zs=[9.4,-9.2],Xs=[0.5,2.4],tRun0=1.2,tRel=2.6,tHit=3.8;
 var plan,T0=0.6,rep=false,repT=0,repEnd=0,waiting=true,auto=!RM,manual=null,elapsed=0,str=0,shotName='';
-var score={r:0,w:0,b:0},st=[{r:0,b:0},{r:0,b:0}],names=['CHOWDARY','PARTNER'],bw={r:0,w:0},ch=[],crowdWaveT=1,celeb=0;
+var score={r:0,w:0,b:0},st=[{r:0,b:0},{r:0,b:0}],names=['CHOWDARY','SAI SHARAT'],bw={r:0,w:0},ch=[],crowdWaveT=1,celeb=0,mileNext=50,wkKind=0,SQ=['SAI SHARAT','DHARMA TEJA','KRISHNA CHAITANYA','KOUSHIK REDDY','SANKET BAROT','RAKHY BOEANA'],sqI=1;
 var cs=new T.Vector3(),ct=new T.Vector3();
 var TAGS={batcu:'BATTER CAM',main:'MAIN CAM',follow:'BALL TRACKER',stump:'STUMP CAM',bowlcu:'BOWLER CAM',land:'BOUNDARY CAM',aerial:'SPIDERCAM',side:'SIDE-ON SLOW-MO',top:'TOP VIEW'};
 var css=document.createElement('style');
-css.textContent='.tv{position:fixed;inset:0;z-index:40;pointer-events:none;font-family:Arial,sans-serif}.bug{position:absolute;left:10px;bottom:10px;display:flex;flex-wrap:wrap;gap:2px;font-size:13px;color:#fff;max-width:calc(100vw - 20px)}.bug>*{background:rgba(8,18,38,.93);padding:6px 10px;display:flex;align-items:center}.bug .lv{background:#c8102e;font-weight:700}.bug .tm{background:#2456d6}.ch{display:inline-block;min-width:18px;text-align:center;border-radius:9px;background:#33507a;margin-left:3px;padding:0 4px;font-style:normal}.ch.c4{background:#2b82d6}.ch.c6{background:#e8c766;color:#111}.ch.cw{background:#c8102e}.ban{position:absolute;left:50%;top:24%;transform:translateX(-50%);font-size:clamp(34px,9vw,84px);font-weight:900;letter-spacing:4px;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.75);opacity:0;white-space:nowrap}.ban.on{animation:bn 2.2s ease forwards}.ban.six{color:#e8c766}.ban.four{color:#7fd1ff}.ban.w{color:#ff5a5a}.ban.rp{color:#fff;font-size:clamp(24px,6vw,52px)}@keyframes bn{0%{opacity:0;transform:translateX(-50%) scale(.4)}12%{opacity:1;transform:translateX(-50%) scale(1.1)}20%{transform:translateX(-50%) scale(1)}80%{opacity:1}100%{opacity:0}}#pop{bottom:104px!important}';
+css.textContent='.tv{position:fixed;inset:0;z-index:40;pointer-events:none;font-family:Arial,sans-serif}.bug{position:absolute;left:10px;bottom:10px;display:flex;flex-wrap:wrap;gap:2px;font-size:13px;color:#fff;max-width:calc(100vw - 20px)}.bug>*{background:rgba(8,18,38,.93);padding:6px 10px;display:flex;align-items:center}.bug .lv{background:#c8102e;font-weight:700}.bug .tm{background:#2456d6}.ch{display:inline-block;min-width:18px;text-align:center;border-radius:9px;background:#33507a;margin-left:3px;padding:0 4px;font-style:normal}.ch.c4{background:#2b82d6}.ch.c6{background:#e8c766;color:#111}.ch.cw{background:#c8102e}.ban{position:absolute;left:50%;top:24%;transform:translateX(-50%);font-size:clamp(34px,9vw,84px);font-weight:900;letter-spacing:4px;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.75);opacity:0;white-space:nowrap}.ban.on{animation:bn 2.2s ease forwards}.ban.six{color:#e8c766}.ban.four{color:#7fd1ff}.ban.w{color:#ff5a5a}.ban.rp{color:#fff;font-size:clamp(24px,6vw,52px)}@keyframes bn{0%{opacity:0;transform:translateX(-50%) scale(.4)}12%{opacity:1;transform:translateX(-50%) scale(1.1)}20%{transform:translateX(-50%) scale(1)}80%{opacity:1}100%{opacity:0}}#pop{bottom:104px!important}.ban.on.mile{animation:bn 5s ease forwards}.ban.on.wk{animation:bn 4s ease forwards}';
 document.head.appendChild(css);
 var tv=document.createElement('div');tv.className='tv';tv.innerHTML='<div class="bug" id="bug"></div><div class="ban" id="ban"></div>';document.body.appendChild(tv);
 var bug=document.getElementById('bug'),banEl=document.getElementById('ban');
@@ -5420,17 +5420,18 @@ if(L){var tp=C.clone().addScaledVector(d,L*q);FH.forEach(function(h,i){var dd=(h
 plan={out:o,phi:phi,d:d,C:C,L:L,land:land,fi:fi,str0:str,scored:false,tEnd:tHit+DUR[o],tScore:tHit+SCT[o]};}
 function doScore(){var o=plan.out,n=o==='W'?0:+o,i=plan.str0;
 score.b++;score.r+=n;st[i].b++;st[i].r+=n;bw.r+=n;ch.push(o==='W'?'W':(o==='0'?'\u2022':o));
-if(o==='W'){score.w++;bw.w++;names[i]='NEW BAT';st[i]={r:0,b:0};}
+if(o==='W'){score.w++;bw.w++;names[i]=SQ[sqI%SQ.length];sqI++;st[i]={r:0,b:0};}
 if(n%2){str^=1;}
 if(o==='6'){crowdWaveT=0;celeb=2.2;banner('SIX!','six');showPop('SIX! Out of the ground.');}
 else if(o==='4'){crowdWaveT=0;celeb=1.4;banner('FOUR!','four');showPop('FOUR! Races away to the rope.');}
-else if(o==='W'){crowdWaveT=0;celeb=2;banner('WICKET!','w');showPop('BOWLED! Timber.');}
+else if(o==='W'){crowdWaveT=0;celeb=2;var DK=[['BOWLED!','BOWLED! Timber.'],['CAUGHT!','CAUGHT! Safe hands in the deep.'],['RUN OUT!','RUN OUT! Direct hit, short of the crease.'],['STUMPED!','STUMPED! Lightning work behind the stumps.'],['LBW!','LBW! Trapped right in front.']];var dk=DK[wkKind%DK.length];wkKind++;banner(dk[0],'w wk');showPop(dk[1]);}
 else if(o==='0'){showPop('Defended solidly.');}
 else{showPop(n+(n>1?' runs. Good running between the wickets.':' run. Pushed into the gap.'));}
+if(score.r>=mileNext&&mileNext<=300){crowdWaveT=0;celeb=2.2;banner(mileNext+' UP!','six mile');showPop('Team '+mileNext+' up!');mileNext+=50;}
 if(score.b%6===0){str^=1;}
 hudUpd();}
 function finish(){waiting=true;
-if(score.w>=10||score.b>=120){score.r=0;score.w=0;score.b=0;ch=[];st=[{r:0,b:0},{r:0,b:0}];names=['CHOWDARY','PARTNER'];bw={r:0,w:0};banner('NEW INNINGS','rp');}
+if(score.w>=10||score.b>=120){score.r=0;score.w=0;score.b=0;ch=[];st=[{r:0,b:0},{r:0,b:0}];names=['CHOWDARY','SAI SHARAT'];sqI=1;bw={r:0,w:0};banner('NEW INNINGS','rp');mileNext=50;}
 plan.str0=str;hudUpd();}
 function startBall(f){if(!waiting){return;}newPlan(f);T0=0;waiting=false;}
 function sh(n,px,py,pz,tx,ty,tz,fov,kp,kt){
