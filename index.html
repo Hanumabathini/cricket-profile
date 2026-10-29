@@ -21,7 +21,7 @@ body{background:#180d07;color:#fff8e7;font-family:Arial,Helvetica,sans-serif;lin
 .btn{display:inline-block;margin-top:22px;background:#ff7a1a;color:#180d07;font-weight:bold;font-size:14px;border:0;border-radius:999px;padding:6px 16px;cursor:pointer;box-shadow:0 2px 8px rgba(255,122,26,.30)}
 .btn:disabled{opacity:.6;cursor:default}
 .hint{margin-top:14px;font-size:13px;color:#e8dcc3}
-.panel{background:rgba(42,22,8,.40);border:1px solid #6b3a1e;border-radius:18px;padding:22px;margin-top:26px}
+.panel{background:rgba(42,22,8,.50);border:1px solid #6b3a1e;border-radius:18px;padding:22px;margin-top:26px}
 .panel h2{font-size:22px;color:#e8c766;margin-bottom:6px}
 .panel h3{font-size:16px;color:#ff8c2e;margin:18px 0 10px}
 .bio .lead{font-size:21px;line-height:1.45;font-weight:bold}
@@ -34,7 +34,7 @@ body{background:#180d07;color:#fff8e7;font-family:Arial,Helvetica,sans-serif;lin
 .stat .l{font-size:11px;letter-spacing:1px;color:#e8dcc3;text-transform:uppercase;margin-top:4px}
 .note{font-size:13px;color:#e8dcc3;line-height:1.7;margin-top:12px}
 .note b{color:#e8c766}
-.fmt{background:rgba(46,26,12,.40);border:1px solid #6b3a1e;border-radius:14px;padding:16px;margin-bottom:12px}
+.fmt{background:rgba(46,26,12,.50);border:1px solid #6b3a1e;border-radius:14px;padding:16px;margin-bottom:12px}
 .fmt b{color:#e8c766}
 .fmt p{font-size:14px;color:#f2e8c9;line-height:1.7;margin-top:4px}
 .season{background:#2e1a0c;border:1px solid #6b3a1e;border-radius:14px;padding:16px;margin-bottom:12px}
@@ -43,7 +43,7 @@ body{background:#180d07;color:#fff8e7;font-family:Arial,Helvetica,sans-serif;lin
 .miles{display:flex;gap:8px;flex-wrap:wrap}
 .mile{background:#2e1a0c;border:1px solid #e8c766;color:#f5ead6;font-size:13px;padding:9px 12px;border-radius:20px}
 .mile b{color:#e8c766}
-.match{display:flex;justify-content:space-between;gap:10px;background:rgba(46,26,12,.40);border:1px solid #6b3a1e;border-radius:12px;padding:12px 14px;margin-bottom:8px;font-size:13px;line-height:1.5}
+.match{display:flex;justify-content:space-between;align-items:center;gap:10px;background:rgba(46,26,12,.50);border:1px solid #6b3a1e;border-radius:12px;padding:12px 14px;margin-bottom:8px;font-size:13px;line-height:1.5}
 .match .opp{color:#f2e8c9}
 .match .opp b{color:#fff8e7}
 .match .res{white-space:nowrap;font-weight:bold}
@@ -69,8 +69,10 @@ body{background:#180d07;color:#fff8e7;font-family:Arial,Helvetica,sans-serif;lin
 .facts td{padding:9px 10px;border-bottom:1px solid #6b3a1e;vertical-align:top}
 .facts td:first-child{color:#e8c766;width:130px;font-size:12px;letter-spacing:1px;text-transform:uppercase}
 .facts td:last-child{color:#e8dcc3}
+.facts td:last-child .pill{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(147,197,253,.15);color:#dbeafe;font-weight:bold}
+.facts td:last-child .pill a{color:#dbeafe}
 .ach{display:flex;flex-direction:column;gap:12px;margin-top:10px}
-.ach div{background:rgba(46,26,12,.40);border:1px solid #6b3a1e;border-radius:14px;padding:14px 16px;font-size:15px;color:#f2e8c9}
+.ach div{background:rgba(46,26,12,.50);border:1px solid #6b3a1e;border-radius:14px;padding:14px 16px;font-size:15px;color:#f2e8c9}
 .ach b{color:#e8c766}
 .faq p{font-size:15px;color:#e8dcc3;line-height:1.7;margin-top:4px}
 .faq h3{margin-top:18px}
@@ -91,11 +93,11 @@ figure:hover img{transform:scale(1.04)}
 
 /* v32 foreground: each section works differently, background untouched */
 .tab-bar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
-.tab-btn{background:rgba(46,26,12,.40);border:1px solid #6b3a1e;color:#f5ead6;padding:9px 14px;border-radius:999px;cursor:pointer}
+.tab-btn{background:rgba(46,26,12,.50);border:1px solid #6b3a1e;color:#f5ead6;padding:9px 14px;border-radius:999px;cursor:pointer}
 .tab-btn.active{background:#ff7a1a;color:#180d07;border-color:#ff7a1a;font-weight:bold}
 .tab-panel{display:none}
 .tab-panel.active{display:block}
-#formats .fmt{background:linear-gradient(90deg,rgba(58,34,8,.40),rgba(46,26,12,.40));border-left:5px solid #ff7a1a}
+#formats .fmt{background:linear-gradient(90deg,rgba(58,34,8,.50),rgba(46,26,12,.50));border-left:5px solid #ff7a1a}
 #awards .ach div{background:linear-gradient(90deg,#3a2208,#2e1a0c);border-left:5px solid #f5b942}
 .career p{border-left:3px solid #ff7a1a;padding-left:18px;position:relative}
 .career p::before{content:'';position:absolute;left:-8px;top:10px;width:13px;height:13px;border-radius:50%;background:#f5b942;border:2px solid #180d07}
@@ -123,12 +125,12 @@ figure:hover img{transform:scale(1.04)}
 @keyframes shine{0%{background-position:-200% 0}100%{background-position:200% 0}}
 #awards .ach:first-of-type div{background:linear-gradient(90deg,rgba(245,185,66,.22),rgba(255,122,26,.12),rgba(245,185,66,.22));background-size:200% 100%;animation:shine 6s linear infinite}
 /* Theme 3 — Career: Temple Journey Timeline */
-#career{background:rgba(24,13,7,.40);border:1px dashed rgba(245,185,66,.4)}
+#career{background:rgba(24,13,7,.50);border:1px dashed rgba(245,185,66,.4)}
 #career p{border-left:3px solid #ff7a1a}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(245,185,66,.5)}50%{box-shadow:0 0 0 6px rgba(245,185,66,0)}}
 .career p::before{animation:pulse 2.5s infinite}
 /* Theme 4 — Matches: Broadcast Scorecards */
-#matches .match{background:linear-gradient(90deg,rgba(46,26,12,.40),rgba(24,13,7,.40));border:1px solid #6b3a1e;border-left:5px solid #f5ead6}
+#matches .match{background:linear-gradient(90deg,rgba(46,26,12,.50),rgba(24,13,7,.50));border:1px solid #6b3a1e;border-left:5px solid #f5ead6}
 #matches .match:has(.res.win){border-left-color:#4dff8b}
 #matches .match:has(.res.loss){border-left-color:#f87171}
 /* Theme 5 — Gallery: Cinema Carousel */
@@ -150,36 +152,36 @@ figure:hover img{transform:scale(1.04)}
 .tab-btn.active{background:linear-gradient(135deg,#f5b942,#ff7a1a);color:#1a1206;border-color:#f5b942}
 .ach div{border-left:3px solid rgba(255,255,255,.16);padding-left:10px;margin-bottom:8px}
 .stat{box-shadow:0 8px 20px rgba(0,0,0,.25)}
-#profile.panel{background:linear-gradient(160deg,rgba(42,31,10,0.40),rgba(26,18,6,0.40));border-color:#c9a227;border-top:3px solid #e8c766}
+#profile.panel{background:linear-gradient(160deg,rgba(42,31,10,0.50),rgba(26,18,6,0.50));border-color:#c9a227;border-top:3px solid #e8c766}
 #profile.panel h2{color:#e8c766}
 #profile.panel h3{color:#ffd97a}
-#facts.panel{background:linear-gradient(160deg,rgba(46,26,8,0.40),rgba(28,16,5,0.40));border-color:#d97a1a;border-top:3px solid #ffb066}
-#facts.panel h2{color:#ffb066}
-#facts.panel h3{color:#ffcc99}
-#stats.panel{background:linear-gradient(160deg,rgba(6,40,30,0.40),rgba(4,26,19,0.40));border-color:#2ea86b;border-top:3px solid #6ee7b7}
+#facts.panel{background:linear-gradient(160deg,rgba(30,58,138,0.50),rgba(23,37,84,0.50));border-color:#60a5fa;border-top:3px solid #93c5fd}
+#facts.panel h2{color:#93c5fd}
+#facts.panel h3{color:#bfdbfe}
+#stats.panel{background:linear-gradient(160deg,rgba(6,40,30,0.50),rgba(4,26,19,0.50));border-color:#2ea86b;border-top:3px solid #6ee7b7}
 #stats.panel h2{color:#6ee7b7}
 #stats.panel h3{color:#a7f3d0}
-#formats.panel{background:linear-gradient(160deg,rgba(10,30,61,0.40),rgba(6,15,34,0.40));border-color:#4a7fb8;border-top:3px solid #93c5fd}
+#formats.panel{background:linear-gradient(160deg,rgba(10,30,61,0.50),rgba(6,15,34,0.50));border-color:#4a7fb8;border-top:3px solid #93c5fd}
 #formats.panel h2{color:#93c5fd}
 #formats.panel h3{color:#bfdbfe}
-#career.panel{background:linear-gradient(160deg,rgba(46,13,18,0.40),rgba(28,8,11,0.40));border-color:#a8323e;border-top:3px solid #fda4af}
+#career.panel{background:linear-gradient(160deg,rgba(46,13,18,0.50),rgba(28,8,11,0.50));border-color:#a8323e;border-top:3px solid #fda4af}
 #career.panel h2{color:#fda4af}
 #career.panel h3{color:#fecdd3}
-#awards.panel{background:linear-gradient(160deg,rgba(58,13,18,0.40),rgba(30,7,10,0.40));border-color:#c9a227;border-top:3px solid #f5b942}
+#awards.panel{background:linear-gradient(160deg,rgba(58,13,18,0.50),rgba(30,7,10,0.50));border-color:#c9a227;border-top:3px solid #f5b942}
 #awards.panel h2{color:#f5b942}
 #awards.panel h3{color:#ffd97a}
-#finals.panel{background:linear-gradient(160deg,rgba(6,42,40,0.40),rgba(4,26,25,0.40));border-color:#2aa79b;border-top:3px solid #5eead4}
+#finals.panel{background:linear-gradient(160deg,rgba(6,42,40,0.50),rgba(4,26,25,0.50));border-color:#2aa79b;border-top:3px solid #5eead4}
 #finals.panel h2{color:#5eead4}
 #finals.panel h3{color:#99f6e4}
-#matches.panel{background:linear-gradient(160deg,rgba(46,13,13,0.40),rgba(28,8,8,0.40));border-color:#a83232;border-top:3px solid #fca5a5}
+#matches.panel{background:linear-gradient(160deg,rgba(46,13,13,0.50),rgba(28,8,8,0.50));border-color:#a83232;border-top:3px solid #fca5a5}
 #matches.panel h2{color:#fca5a5}
 #matches.panel h3{color:#fecaca}
-#gallery.panel{background:linear-gradient(160deg,rgba(46,28,8,0.40),rgba(28,16,5,0.40));border-color:#c07a2a;border-top:3px solid #fdba74}
+#gallery.panel{background:linear-gradient(160deg,rgba(46,28,8,0.50),rgba(28,16,5,0.50));border-color:#c07a2a;border-top:3px solid #fdba74}
 #gallery.panel h2{color:#fdba74}
 #gallery.panel h3{color:#fed7aa}
-#faq.panel{background:linear-gradient(160deg,rgba(38,14,46,0.40),rgba(23,8,24,0.40));border-color:#9a4a9a;border-top:3px solid #f0abfc}
-#faq.panel h2{color:#f0abfc}
-#faq.panel h3{color:#f5d0fe}
+#faq.panel{background:linear-gradient(160deg,rgba(51,65,85,0.50),rgba(15,23,42,0.50));border-color:#64748b;border-top:3px solid #94a3b8}
+#faq.panel h2{color:#e2e8f0}
+#faq.panel h3{color:#e2e8f0}
 
 /* v56: Awards per-category colours + icons */
 #awards h3[data-award="mvp"]{color:#f5b942}
@@ -226,7 +228,7 @@ figure:hover img{transform:scale(1.04)}
 <tr><td>Base</td><td>Memphis, TN</td></tr>
 <tr><td>Teams</td><td>BYCC Syndicate &middot; Gabbar Kings &middot; Telugu Warriors &middot; Memphis Royal Challengers</td></tr>
 <tr><td>Journey</td><td>SRKIT college cricket &rarr; MML franchise cricket</td></tr>
-<tr><td>Profiles</td><td><a href="https://chshare.link/player/dBybyW">CricHeroes PRO</a> &middot; <a href="https://cricclubs.com/MEMPHISCRICKETTOURNAMENT/viewPlayer.do?playerId=5134562&clubId=35857">CricClubs</a> &middot; <a href="https://dallascricket.in/user-profile/556/details">Dallas Cricket League</a></td></tr>
+<tr><td>Profiles</td><td><span class="pill"><a href="https://chshare.link/player/dBybyW">CricHeroes PRO</a></span> &middot; <span class="pill"><a href="https://cricclubs.com/MEMPHISCRICKETTOURNAMENT/viewPlayer.do?playerId=5134562&clubId=35857">CricClubs</a></span> &middot; <span class="pill"><a href="https://dallascricket.in/user-profile/556/details">Dallas Cricket League</a></span></td></tr>
 </table>
 </section>
 
@@ -438,15 +440,16 @@ figure:hover img{transform:scale(1.04)}
 </section>
 <section class="panel" id="matches">
 <h2>Recent matches &mdash; 2026 (BYCC Syndicate)</h2>
-<div class="match"><span class="opp"><b>Oct 17</b> &middot; MPL 2026 QF vs WCC Tigers</span><span class="res win">Won by 8 wkts</span></div>
-<div class="match"><span class="opp"><b>Oct 10</b> &middot; MPL 2026 vs CCA</span><span class="res win">Won by 17 runs</span></div>
-<div class="match"><span class="opp"><b>Sep 26</b> &middot; MPL 2026 vs BYCC Gladiators</span><span class="res win">Won by 39 runs</span></div>
-<div class="match"><span class="opp"><b>Sep 20</b> &middot; MPL 2026 vs MCC Grizzlies</span><span class="res win">Won by 63 runs</span></div>
-<div class="match"><span class="opp"><b>Aug 22</b> &middot; Minor League T20 vs BYCC Warriors</span><span class="res loss">Lost by 4 runs</span></div>
-<div class="match"><span class="opp"><b>Aug 15</b> &middot; Minor League T20 vs MCC Grizzlies</span><span class="res win">Won by 5 wkts</span></div>
-<div class="match"><span class="opp"><b>Aug 9</b> &middot; Minor League T20 vs Indian Lions</span><span class="res win">Won by 5 wkts</span></div>
-<div class="match"><span class="opp"><b>Aug 8</b> &middot; Minor League T20 vs CCA</span><span class="res win">Won by 85 runs</span></div>
-<div class="match"><span class="opp"><b>Aug 1</b> &middot; Minor League T20 vs CAM</span><span class="res win">Won by 84 runs</span></div>
+<div class="match"><span class="opp"><b>Oct 17</b> &middot; MPL 2026 QF vs WCC Tigers<br><small>11* (10) &middot; DNB</small></span><span class="res win">Won by 8 wkts</span></div>
+<div class="match"><span class="opp"><b>Oct 10</b> &middot; MPL 2026 vs CCA<br><small>55 (47) &middot; DNB &middot; 1 catch</small></span><span class="res win">Won by 17 runs</span></div>
+<div class="match"><span class="opp"><b>Sep 26</b> &middot; MPL 2026 vs BYCC Gladiators<br><small>11 (13) &middot; DNB</small></span><span class="res win">Won by 39 runs</span></div>
+<div class="match"><span class="opp"><b>Sep 20</b> &middot; MPL 2026 vs MCC Grizzlies<br><small>44 (26) &middot; 1-0-12-0 &middot; 1 catch</small></span><span class="res win">Won by 63 runs</span></div>
+<div class="match"><span class="opp"><b>Aug 22</b> &middot; Minor League T20 vs BYCC Warriors<br><small>12 (9) &middot; 4-0-39-1</small></span><span class="res loss">Lost by 4 runs</span></div>
+<div class="match"><span class="opp"><b>Aug 15</b> &middot; Minor League T20 vs MCC Grizzlies<br><small>11 (8) &middot; DNB &middot; 1 catch</small></span><span class="res win">Won by 5 wkts</span></div>
+<div class="match"><span class="opp"><b>Aug 9</b> &middot; Minor League T20 vs Indian Lions<br><small>22* (17) &middot; 1-0-4-1 &middot; 2 catches</small></span><span class="res win">Won by 5 wkts</span></div>
+<div class="match"><span class="opp"><b>Aug 8</b> &middot; Minor League T20 vs CCA<br><small>34* (24) &middot; 3-0-22-1 &middot; 1 run out</small></span><span class="res win">Won by 85 runs</span></div>
+<div class="match"><span class="opp"><b>Aug 1</b> &middot; Minor League T20 vs CAM<br><small>53 (39) &middot; DNB &middot; 1 catch</small></span><span class="res win">Won by 84 runs</span></div>
+<div class="match"><span class="opp"><b>Jul 26</b> &middot; Minor League T20 vs Wolfpack<br><small>9 (10) &middot; 1-0-10-0</small></span><span class="res loss">Lost by 7 wkts</span></div>
 </section>
 
 <section id="gallery">
